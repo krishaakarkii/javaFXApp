@@ -74,7 +74,7 @@ Simple arithmetic operations:
 ### Tic Tac Toe
 Enjoy the classic game:
 
-*You can replace `path/to/...` with actual image paths after adding screenshots to the repo.*
+
 
 ## Future Improvements
 - Add more interactive features to the apps.
