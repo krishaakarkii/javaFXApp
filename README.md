@@ -1,6 +1,4 @@
-Sure, here's the content formatted for a `README.md` file that you can copy and paste directly:
 
-```markdown
 # JavaFX Multi-App
 
 This is a **JavaFX-based Multi-App Application** that combines several small applications into a single platform. It is built using JavaFX, Maven, and adheres to modular programming practices. Each app within the platform has its own dedicated UI and logic.
@@ -18,8 +16,8 @@ The application currently includes the following mini-apps:
 
 ## Project Structure
 
-The project is structured as follows:
-```
+# The project is structured as follows:
+
 src/
 ├── main/
 │   ├── java/
