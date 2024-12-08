@@ -58,9 +58,19 @@ private void handleTicTacToe(ActionEvent event) {
     }
 
     @FXML
-    private void handleRecipeManager(ActionEvent event) {
-        System.out.println("Recipe Manager clicked!");
+private void handleRecipeManager(ActionEvent event) {
+    try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/recipe/Recipe.fxml"));
+        Parent recipeRoot = fxmlLoader.load();
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(recipeRoot));
+        stage.setTitle("Recipe Manager");
+        stage.show();
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
+
 
     @FXML
     private void handleChatApp(ActionEvent event) {
