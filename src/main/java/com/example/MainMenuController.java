@@ -37,11 +37,20 @@ private void handleToDoList(ActionEvent event) {
     }
 }
 
-
-    @FXML
-    private void handleTicTacToe(ActionEvent event) {
-        System.out.println("Tic Tac Toe clicked!");
+@FXML
+private void handleTicTacToe(ActionEvent event) {
+    try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/ticTacToe/TicTacToe.fxml"));
+        Parent ticTacToeRoot = fxmlLoader.load();
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(ticTacToeRoot));
+        stage.setTitle("Tic Tac Toe");
+        stage.show();
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
+
 
     @FXML
     private void handleWeatherChecker(ActionEvent event) {

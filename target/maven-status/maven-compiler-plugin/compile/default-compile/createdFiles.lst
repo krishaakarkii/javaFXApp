@@ -1,2 +1,5 @@
+com/example/calculator/CalculatorController.class
 com/example/App.class
 com/example/MainMenuController.class
+com/example/todolist/ToDoListController.class
+com/example/ticTacToe/TicTacToeController.class

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ticTacToe.TicTacToeController">
+    <GridPane alignment="CENTER" hgap="5" vgap="5">
+        <Button text="" fx:id="button1" onAction="#handleButtonClick" GridPane.rowIndex="0" GridPane.columnIndex="0" prefHeight="100" prefWidth="100" />
+        <Button text="" fx:id="button2" onAction="#handleButtonClick" GridPane.rowIndex="0" GridPane.columnIndex="1" prefHeight="100" prefWidth="100" />
+        <Button text="" fx:id="button3" onAction="#handleButtonClick" GridPane.rowIndex="0" GridPane.columnIndex="2" prefHeight="100" prefWidth="100" />
+
+        <Button text="" fx:id="button4" onAction="#handleButtonClick" GridPane.rowIndex="1" GridPane.columnIndex="0" prefHeight="100" prefWidth="100" />
+        <Button text="" fx:id="button5" onAction="#handleButtonClick" GridPane.rowIndex="1" GridPane.columnIndex="1" prefHeight="100" prefWidth="100" />
+        <Button text="" fx:id="button6" onAction="#handleButtonClick" GridPane.rowIndex="1" GridPane.columnIndex="2" prefHeight="100" prefWidth="100" />
+
+        <Button text="" fx:id="button7" onAction="#handleButtonClick" GridPane.rowIndex="2" GridPane.columnIndex="0" prefHeight="100" prefWidth="100" />
+        <Button text="" fx:id="button8" onAction="#handleButtonClick" GridPane.rowIndex="2" GridPane.columnIndex="1" prefHeight="100" prefWidth="100" />
+        <Button text="" fx:id="button9" onAction="#handleButtonClick" GridPane.rowIndex="2" GridPane.columnIndex="2" prefHeight="100" prefWidth="100" />
+    </GridPane>
+
+    <Label fx:id="statusLabel" text="Player X's Turn" />
+    <Button text="Restart Game" onAction="#handleRestart" />
+    <Button text="Back to Main Menu" onAction="#handleBack" />
+</VBox>
