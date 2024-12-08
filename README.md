@@ -61,19 +61,6 @@ src/
    ```bash
    mvn clean install
    mvn javafx:run
-   ```
-
-## Screenshots
-
-### Main Menu
-The main menu allows you to navigate to the individual apps:
-
-### Calculator
-Simple arithmetic operations:
-
-### Tic Tac Toe
-Enjoy the classic game:
-
 
 
 ## Future Improvements
