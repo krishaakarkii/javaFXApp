@@ -24,9 +24,19 @@ public class MainMenuController {
     }
 
     @FXML
-    private void handleToDoList(ActionEvent event) {
-        System.out.println("To-Do List clicked!");
+private void handleToDoList(ActionEvent event) {
+    try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/todolist/ToDoList.fxml"));
+        Parent toDoListRoot = fxmlLoader.load();
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(toDoListRoot));
+        stage.setTitle("To-Do List");
+        stage.show();
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
+
 
     @FXML
     private void handleTicTacToe(ActionEvent event) {
