@@ -52,10 +52,19 @@ private void handleTicTacToe(ActionEvent event) {
 }
 
 
-    @FXML
-    private void handleWeatherChecker(ActionEvent event) {
-        System.out.println("Weather Checker clicked!");
+@FXML
+private void handleWeatherChecker(ActionEvent event) {
+    try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/weather/Weather.fxml"));
+        Parent weatherRoot = fxmlLoader.load();
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(weatherRoot));
+        stage.setTitle("Weather Checker");
+        stage.show();
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
 
     @FXML
 private void handleRecipeManager(ActionEvent event) {
