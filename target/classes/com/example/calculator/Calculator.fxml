@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculator.CalculatorController">
+    <TextField fx:id="display" editable="false" />
+    <GridPane hgap="5" vgap="5">
+        <Button text="1" onAction="#handleNumber" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Button text="2" onAction="#handleNumber" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Button text="3" onAction="#handleNumber" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <Button text="+" onAction="#handleOperator" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Button text="4" onAction="#handleNumber" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Button text="5" onAction="#handleNumber" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Button text="6" onAction="#handleNumber" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <Button text="-" onAction="#handleOperator" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Button text="7" onAction="#handleNumber" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Button text="8" onAction="#handleNumber" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Button text="9" onAction="#handleNumber" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <Button text="*" onAction="#handleOperator" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+        <Button text="C" onAction="#handleClear" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Button text="0" onAction="#handleNumber" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Button text="=" onAction="#handleOperator" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <Button text="/" onAction="#handleOperator" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+    </GridPane>
+    <Button text="Back to Main Menu" onAction="#handleBack"/>
+</VBox>
