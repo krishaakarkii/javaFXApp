@@ -81,8 +81,18 @@ private void handleRecipeManager(ActionEvent event) {
 }
 
 
-    @FXML
-    private void handleChatApp(ActionEvent event) {
-        System.out.println("Chat Application clicked!");
+@FXML
+private void handleChatApp(ActionEvent event) {
+    try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/chat/Chat.fxml"));
+        Parent chatRoot = fxmlLoader.load();
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(chatRoot));
+        stage.setTitle("Chat Application");
+        stage.show();
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
+
 }
