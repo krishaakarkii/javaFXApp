@@ -2,11 +2,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.weather.WeatherController">
-    <Label text="Weather Checker" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
-    <TextField fx:id="cityInput" promptText="Enter city name" />
-    <Button fx:id="fetchWeatherButton" text="Get Weather" onAction="#handleFetchWeather" />
-    <Label fx:id="weatherOutput" text="Weather details will appear here" />
-    <Button text="Back to Main Menu" onAction="#handleBack" />
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.weather.WeatherController"
+      style="-fx-padding: 20; -fx-background-color: #f0f8ff; -fx-font-size: 16;">
+
+    <!-- Title -->
+    <Label text="Weather Checker" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+    <!-- Input Field -->
+    <TextField fx:id="cityInput" promptText="Enter city name" prefWidth="300" prefHeight="40"
+               style="-fx-font-size: 16;" />
+
+    <!-- Button to Fetch Weather -->
+    <Button fx:id="fetchWeatherButton" text="Get Weather" onAction="#handleFetchWeather" prefWidth="150"
+            style="-fx-font-size: 16;" />
+
+    <!-- Output Label -->
+    <Label fx:id="weatherOutput" text="Weather details will appear here" wrapText="true" prefWidth="350"
+           style="-fx-text-alignment: center; -fx-font-size: 16;" />
+
+    <!-- Back Button -->
+    <Button text="Back to Main Menu" onAction="#handleBack" prefWidth="200" style="-fx-font-size: 16;" />
 </VBox>

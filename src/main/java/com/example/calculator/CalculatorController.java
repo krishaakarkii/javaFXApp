@@ -69,18 +69,12 @@ public class CalculatorController {
     }
 
     private double calculate(double operand1, double operand2, String operator) {
-        switch (operator) {
-            case "+":
-                return operand1 + operand2;
-            case "-":
-                return operand1 - operand2;
-            case "*":
-                return operand1 * operand2;
-            case "/":
-                if (operand2 != 0) return operand1 / operand2;
-                return 0;
-            default:
-                return 0;
-        }
+        return switch (operator) {
+            case "+" -> operand1 + operand2;
+            case "-" -> operand1 - operand2;
+            case "*" -> operand1 * operand2;
+            case "/" -> operand2 != 0 ? operand1 / operand2 : 0;
+            default -> 0;
+        };
     }
 }

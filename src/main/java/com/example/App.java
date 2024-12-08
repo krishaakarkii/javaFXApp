@@ -9,7 +9,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/MainMenu.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600); // Set a reasonable size
+        Scene scene = new Scene(fxmlLoader.load(), 800, 800); // Set a reasonable size
         primaryStage.setTitle("JavaFX Multi-App");
         primaryStage.setScene(scene);
         primaryStage.show();

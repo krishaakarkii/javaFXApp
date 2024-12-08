@@ -7,7 +7,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 
 public class RecipeController {
@@ -22,15 +25,39 @@ public class RecipeController {
     private final ObservableList<Recipe> recipes = FXCollections.observableArrayList();
 
     @FXML
+private void handleBack(ActionEvent event) {
+    try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/MainMenu.fxml"));
+        Parent mainMenuRoot = fxmlLoader.load();
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(mainMenuRoot));
+        stage.setTitle("Main Menu");
+        stage.show();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+    @FXML
     private void initialize() {
-        nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-        ingredientsColumn.setCellValueFactory(cellData -> cellData.getValue().ingredientsProperty());
+        // Set up the table columns
+        nameColumn.setCellValueFactory(data -> data.getValue().nameProperty());
+        ingredientsColumn.setCellValueFactory(data -> data.getValue().ingredientsProperty());
+
+        // Make columns editable
+        nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        ingredientsColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        // Populate the table with sample data
+        recipes.add(new Recipe("New Recipe", "Ingredients..."));
         recipeTable.setItems(recipes);
+
+        // Enable table editing
+        recipeTable.setEditable(true);
     }
 
     @FXML
     private void handleAddRecipe(ActionEvent event) {
-        // Add a placeholder recipe for demonstration
         recipes.add(new Recipe("New Recipe", "Ingredients..."));
     }
 
@@ -38,11 +65,10 @@ public class RecipeController {
     private void handleEditRecipe(ActionEvent event) {
         Recipe selectedRecipe = recipeTable.getSelectionModel().getSelectedItem();
         if (selectedRecipe != null) {
-            selectedRecipe.setName("Edited Recipe");
-            selectedRecipe.setIngredients("Updated Ingredients...");
-            recipeTable.refresh();
+            selectedRecipe.setName("Edited Recipe Name");
+            selectedRecipe.setIngredients("Edited Ingredients");
         } else {
-            showAlert("No Selection", "Please select a recipe to edit.");
+            showAlert("No Recipe Selected", "Please select a recipe to edit.");
         }
     }
 
@@ -52,21 +78,7 @@ public class RecipeController {
         if (selectedRecipe != null) {
             recipes.remove(selectedRecipe);
         } else {
-            showAlert("No Selection", "Please select a recipe to delete.");
-        }
-    }
-
-    @FXML
-    private void handleBack(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/MainMenu.fxml"));
-            Parent mainMenuRoot = fxmlLoader.load();
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(mainMenuRoot));
-            stage.setTitle("Main Menu");
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
+            showAlert("No Recipe Selected", "Please select a recipe to delete.");
         }
     }
 

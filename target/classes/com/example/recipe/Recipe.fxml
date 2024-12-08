@@ -2,21 +2,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recipe.RecipeController">
-    <Label text="Recipe Manager" style="-fx-font-size: 20px;" />
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.recipe.RecipeController">
 
-    <TableView fx:id="recipeTable" prefHeight="200">
+    <Label text="Recipe Manager" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <!-- Table for Recipes -->
+    <TableView fx:id="recipeTable" prefWidth="400" prefHeight="200">
         <columns>
-            <TableColumn text="Recipe Name" fx:id="nameColumn" prefWidth="150" />
-            <TableColumn text="Ingredients" fx:id="ingredientsColumn" prefWidth="300" />
+            <TableColumn fx:id="nameColumn" text="Recipe Name" prefWidth="200" />
+            <TableColumn fx:id="ingredientsColumn" text="Ingredients" prefWidth="200" />
         </columns>
     </TableView>
 
-    <HBox spacing="10" alignment="CENTER">
+    <!-- Buttons -->
+    <HBox spacing="10">
         <Button text="Add Recipe" onAction="#handleAddRecipe" />
         <Button text="Edit Recipe" onAction="#handleEditRecipe" />
         <Button text="Delete Recipe" onAction="#handleDeleteRecipe" />
     </HBox>
-
     <Button text="Back to Main Menu" onAction="#handleBack" />
 </VBox>

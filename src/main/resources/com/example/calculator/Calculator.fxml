@@ -2,28 +2,37 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculator.CalculatorController">
-    <TextField fx:id="display" editable="false" />
-    <GridPane hgap="5" vgap="5">
-        <Button text="1" onAction="#handleNumber" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <Button text="2" onAction="#handleNumber" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-        <Button text="3" onAction="#handleNumber" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
-        <Button text="+" onAction="#handleOperator" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculator.CalculatorController">
+    <!-- Display Field -->
+    <TextField fx:id="display" editable="false" prefWidth="200" prefHeight="100" style="-fx-font-size: 18;" />
 
-        <Button text="4" onAction="#handleNumber" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <Button text="5" onAction="#handleNumber" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-        <Button text="6" onAction="#handleNumber" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
-        <Button text="-" onAction="#handleOperator" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+    <!-- Buttons -->
+    <GridPane hgap="5" vgap="5" alignment="CENTER">
+        <!-- First Row -->
+        <Button text="7" onAction="#handleNumber" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="50" prefHeight="50" />
+        <Button text="8" onAction="#handleNumber" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="50" prefHeight="50" />
+        <Button text="9" onAction="#handleNumber" GridPane.columnIndex="2" GridPane.rowIndex="0" prefWidth="50" prefHeight="50" />
+        <Button text="/" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="50" prefHeight="50" />
 
-        <Button text="7" onAction="#handleNumber" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <Button text="8" onAction="#handleNumber" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-        <Button text="9" onAction="#handleNumber" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
-        <Button text="*" onAction="#handleOperator" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+        <!-- Second Row -->
+        <Button text="4" onAction="#handleNumber" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="50" prefHeight="50" />
+        <Button text="5" onAction="#handleNumber" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="50" prefHeight="50" />
+        <Button text="6" onAction="#handleNumber" GridPane.columnIndex="2" GridPane.rowIndex="1" prefWidth="50" prefHeight="50" />
+        <Button text="*" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="1" prefWidth="50" prefHeight="50" />
 
-        <Button text="C" onAction="#handleClear" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <Button text="0" onAction="#handleNumber" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
-        <Button text="=" onAction="#handleOperator" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
-        <Button text="/" onAction="#handleOperator" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+        <!-- Third Row -->
+        <Button text="1" onAction="#handleNumber" GridPane.columnIndex="0" GridPane.rowIndex="2" prefWidth="50" prefHeight="50" />
+        <Button text="2" onAction="#handleNumber" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="50" prefHeight="50" />
+        <Button text="3" onAction="#handleNumber" GridPane.columnIndex="2" GridPane.rowIndex="2" prefWidth="50" prefHeight="50" />
+        <Button text="-" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="2" prefWidth="50" prefHeight="50" />
+
+        <!-- Fourth Row -->
+        <Button text="0" onAction="#handleNumber" GridPane.columnIndex="0" GridPane.rowIndex="3" prefWidth="50" prefHeight="50" />
+        <Button text="C" onAction="#handleClear" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="50" prefHeight="50" />
+        <Button text="=" onAction="#handleOperator" GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="50" prefHeight="50" />
+        <Button text="+" onAction="#handleOperator" GridPane.columnIndex="3" GridPane.rowIndex="3" prefWidth="50" prefHeight="50" />
     </GridPane>
-    <Button text="Back to Main Menu" onAction="#handleBack"/>
+
+    <!-- Back Button -->
+    <Button text="Back" onAction="#handleBack" prefWidth="100" />
 </VBox>
